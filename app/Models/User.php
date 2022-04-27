@@ -66,4 +66,9 @@ class User extends Authenticatable
     {
         return Carbon::parse($value)->timestamp;
     }
+
+    public function getAvatarAttribute($value)
+    {
+        return env('ASSET_URL'). "/uploads/".$value;
+    }
 }

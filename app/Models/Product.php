@@ -64,4 +64,19 @@ class Product extends Model
     {
         return Carbon::parse($value)->timestamp;
     }
+
+    public function getImageSatuAttribute($value)
+    {
+        return env('ASSET_URL'). "/uploads/".$value;
+    }
+
+    public function getImageDuaAttribute($value)
+    {
+        return env('ASSET_URL'). "/uploads/".$value;
+    }
+
+    public function getImageTigaAttribute($value)
+    {
+        return env('ASSET_URL'). "/uploads/".$value;
+    }
 }

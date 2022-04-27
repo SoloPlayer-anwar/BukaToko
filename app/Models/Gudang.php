@@ -35,4 +35,9 @@ class Gudang extends Model
     {
         return Carbon::parse($value)->timestamp;
     }
+
+    public function getPhotoGudangAttribute($value)
+    {
+        return env('ASSET_URL'). "/uploads/".$value;
+    }
 }

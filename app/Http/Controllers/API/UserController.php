@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ResponseFormmater;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ class UserController extends Controller
             return ResponseFormmater::success([
                 'access_token' => $tokenResult,
                 'token_type' => 'Bearer',
-                'user' => $user
+                'user' => $user,
             ], 'Login Success');
         }
         catch(Exception $error)
@@ -90,7 +91,7 @@ class UserController extends Controller
             return ResponseFormmater::success([
                 'access_token' => $tokenResult,
                 'token_type' => 'Bearer',
-                'user' => $user
+                'user' => $user,
             ], 'Register Success');
         }
 
@@ -105,7 +106,7 @@ class UserController extends Controller
 
     public function getUser(Request $request)
     {
-        return ResponseFormmater::success($request->user(), 'Get User Success');
+        return ResponseFormmater::success(new UserResource($request->user()), 'Get User Success');
     }
 
     public function logout(Request $request)
@@ -157,12 +158,12 @@ class UserController extends Controller
                $userAvatar = "user-avatar/".date('YmdHis').".".$extensions;
                $uploadPath = env('UPLOAD_PATH')."/user-avatar";
                $request->file('avatar')->move($uploadPath, $userAvatar);
-               $input['avatar'] = $userAvatar;
+               $data['avatar'] = $userAvatar;
            }
 
         }
 
-        $user->update($input);
+        $user->update($data);
         return ResponseFormmater::success(
             $user,
             'Upload Success'
