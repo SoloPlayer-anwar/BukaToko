@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ResponseFormmater;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -106,7 +105,7 @@ class UserController extends Controller
 
     public function getUser(Request $request)
     {
-        return ResponseFormmater::success(new UserResource($request->user()), 'Get User Success');
+        return ResponseFormmater::success($request->user(), 'Get User Success');
     }
 
     public function logout(Request $request)
