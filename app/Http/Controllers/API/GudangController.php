@@ -15,6 +15,7 @@ class GudangController extends Controller
         $limit = $request->input('limit',10);
         $promo = $request->input('promo');
         $show_product = $request->input('show_product');
+        $status = $request->input('status');
 
         if($id)
         {
@@ -47,6 +48,11 @@ class GudangController extends Controller
         if($show_product)
         {
             $gudang->with('product');
+        }
+
+        if($status)
+        {
+            $gudang->where('status', $status);
         }
 
         return ResponseFormmater::success(

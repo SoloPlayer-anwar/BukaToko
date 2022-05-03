@@ -18,6 +18,7 @@ class Komentar extends Model
         'comment',
         'comment_admin',
         'product_id',
+        'photo_comment',
     ];
 
 
@@ -35,5 +36,10 @@ class Komentar extends Model
     public function getUpdatedAtAttribute($value)
     {
         return Carbon::parse($value)->timestamp;
+    }
+
+    public function getPhotoCommentAttribute($value)
+    {
+        return env('ASSET_URL'). "/uploads/".$value;
     }
 }

@@ -31,7 +31,7 @@ Details Status
                 <tr>
                     <td>Image User</td>
                     <td>:</td>
-                    <td><img src="{{asset('uploads/'.$upload_status->photo_user)}}" width="50px" height="50px" alt="Server sedang gangguan"></td>
+                    <td><img src="{{$upload_status->photo_user}}" width="50px" height="50px" alt="Server sedang gangguan"></td>
                 </tr>
 
                 <tr>

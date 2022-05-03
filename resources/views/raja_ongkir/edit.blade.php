@@ -32,7 +32,7 @@ Edit RajaOngkir
                   <div class="form-group">
                     <label for="photo_ongkir">Photo Ongkir</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$raja_ongkir->photo_ongkir)}}" width="40px" height="40px" alt="">
+                        <img src="{{$raja_ongkir->photo_ongkir}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

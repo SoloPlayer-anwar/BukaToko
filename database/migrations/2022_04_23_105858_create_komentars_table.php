@@ -22,6 +22,7 @@ class CreateKomentarsTable extends Migration
             $table->text('comment')->nullable();
             $table->text('comment_admin')->nullable();
             $table->bigInteger('product_id')->nullable();
+            $table->text('photo_comment')->nullable();
             $table->timestamps();
         });
     }

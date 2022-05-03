@@ -39,7 +39,7 @@ Edit Data Upload Status
                   <div class="form-group">
                     <label for="photo_user">Photo User</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$upload_status->photo_user)}}" width="40px" height="40px" alt="">
+                        <img src="{{$upload_status->photo_user}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

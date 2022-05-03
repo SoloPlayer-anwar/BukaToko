@@ -92,9 +92,9 @@ Details Transaction
                     <td>Photo Product</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$transaction->product->image_satu)}}" width="50px" height="50px" alt="">
-                        <img src="{{asset('uploads/'.$transaction->product->image_dua)}}" width="50px" height="50px" alt="">
-                        <img src="{{asset('uploads/'.$transaction->product->image_tiga)}}" width="50px" height="50px" alt="">
+                        <img src="{{$transaction->product->image_satu}}" width="50px" height="50px" alt="">
+                        <img src="{{$transaction->product->image_dua}}" width="50px" height="50px" alt="">
+                        <img src="{{$transaction->product->image_tiga}}" width="50px" height="50px" alt="">
                     </td>
 
                 </tr>

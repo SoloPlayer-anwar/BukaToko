@@ -46,6 +46,7 @@ Data Komentar
                     <th width="7%">No</th>
                     <th width="15%">Nama Komentar</th>
                     <th width="15%">Komentar User</th>
+                    <th width="15%">Photo</th>
                     <th width="15%">Rating Comment</th>
                     <th width="30%">Action</th>
                 </tr>
@@ -56,6 +57,8 @@ Data Komentar
                     <td>{{$loop->iteration + ($komentar->perPage() * ($komentar->currentPage() -1) )}}</td>
                     <td>{{$item->name_comment}}</td>
                     <td>{{$item->comment}}</td>
+                    <td>
+                        <img src="{{$item->photo_comment}}" width="100px" height="100px">
                     <td>{{$item->rate_comment}}</td>
 
                     <td>

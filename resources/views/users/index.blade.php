@@ -69,7 +69,7 @@ Data User
                     <td>{{$item->name}}</td>
                     <td>{{$item->email}}</td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->avatar)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->avatar}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>{{$item->role}}</td>
                     <td>{{$item->status}}</td>

@@ -57,7 +57,7 @@ Data Daftar Seller
                     <td>{{$item->name_toko}}</td>
 
                     <td>
-                        <img src="{{asset('uploads/'.$item->photo_ktp)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->photo_ktp}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
 
                     <td>{{$item->address_seller}}</td>

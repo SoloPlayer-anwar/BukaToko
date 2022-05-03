@@ -73,7 +73,7 @@ Edit User
                   <div class="form-group">
                     <label for="avatar">Avatar</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$users->avatar)}}" width="40px" height="40px" alt="">
+                        <img src="{{$users->avatar}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

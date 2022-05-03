@@ -26,7 +26,7 @@ Edit Category
                   <div class="form-group">
                     <label for="photo_category">Photo Category</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$category->photo_category)}}" width="40px" height="40px" alt="">
+                        <img src="{{$category->photo_category}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

@@ -58,7 +58,7 @@ Data Raja Ongkir
                     <td>{{$item->name_ongkir}}</td>
                     <td>{{number_format($item->price_ongkir)}}</td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->photo_ongkir)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->photo_ongkir}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>
                         <a href="{{route('raja_ongkir.edit', [$item->id])}}" class="btn btn-warning btn-sm">Edit</a>

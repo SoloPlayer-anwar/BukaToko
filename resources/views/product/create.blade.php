@@ -24,7 +24,7 @@ Create Product
 
                   <div class="form-group">
                     <label for="description_product">Description</label>
-                    <input type="text" class="form-control {{$errors->first('description_product') ? 'is-invalid' : ''}}" name="description_product" id="description_product" placeholder="Enter Description" value="{{ old('description_product') }}">
+                    <textarea class="form-control {{$errors->first('description_product') ? 'is-invalid' : ''}}" name="description_product" id="description_product" placeholder="Enter Description Product">{{ old('description_product') }}</textarea>
                     <span class="error invalid-feedback">{{$errors->first('description_product')}}</span>
                   </div>
 
@@ -171,4 +171,24 @@ Create Product
       </div>
     </div>
   </div>
+@endsection
+
+@section('custom_script')
+<link rel="stylesheet" href="{{asset ('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
+<script src="{{asset('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script>
+    $(document).ready(function(){
+        $('#description_product').summernote({
+            toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']]
+  ]
+        });
+    });
+</script>
 @endsection

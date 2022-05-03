@@ -32,7 +32,7 @@ Edit Data Gudang
                   <div class="form-group">
                     <label for="photo_gudang">Photo Gudang</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$data_gudang->photo_gudang)}}" width="40px" height="40px" alt="">
+                        <img src="{{$data_gudang->photo_gudang}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

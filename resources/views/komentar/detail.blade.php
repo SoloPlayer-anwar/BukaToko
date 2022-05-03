@@ -40,6 +40,15 @@ Details Komentar
                     <td>{{$komentar->rate_comment}}</td>
                 </tr>
 
+
+                <tr>
+                    <td>Photo Komentar</td>
+                    <td>:</td>
+                    <td>
+                        <img src="{{$komentar->photo_comment}}" width="50px" height="50px" alt="">
+                    </td>
+                </tr>
+
                 <tr>
                     <td>Comment User</td>
                     <td>:</td>

@@ -32,7 +32,7 @@ Details Seller
                     <td>Photo Ktp</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$daftar_seller->photo_ktp)}}" width="50px" height="50px" alt="">
+                        <img src="{{$daftar_seller->photo_ktp}}" width="50px" height="50px" alt="">
                     </td>
                 </tr>
 

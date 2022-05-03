@@ -8,6 +8,8 @@ use App\Models\Komentar;
 use Exception;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isNull;
+
 class KomentarController extends Controller
 {
     public function all(Request $request)
@@ -62,6 +64,7 @@ class KomentarController extends Controller
             'comment' => '',
             'comment_admin' => '',
             'product_id' => 'required|exists:products,id',
+            'photo_comment' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
 
@@ -73,10 +76,22 @@ class KomentarController extends Controller
             'comment' => $request->comment,
             'comment_admin' => $request->comment_admin,
             'product_id' => $request->product_id,
+            'photo_comment' => $request->photo_comment,
         ]);
 
 
         $komentar = Komentar::with(['product'])->find($komentar->id);
+
+        if($request->file('photo_comment')->isValid())
+            {
+
+                $photo_comment = $request->file('photo_comment');
+                $extensions = $photo_comment->getClientOriginalExtension();
+                $comment = "comment-photo_comment/".date('YmdHis').".".$extensions;
+                $uploadPath = env('UPLOAD_PATH'). "/comment-photo_comment";
+                $request->file('photo_comment')->move($uploadPath, $comment);
+                $komentar['photo_comment'] = $comment;
+            }
 
         try {
             $komentar->save();
@@ -95,4 +110,6 @@ class KomentarController extends Controller
             );
         }
     }
+
+
 }

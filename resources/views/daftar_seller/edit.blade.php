@@ -26,7 +26,7 @@ Edit Daftar Seller
                   <div class="form-group">
                     <label for="photo_ktp">Photo KTP</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$daftar_seller->photo_ktp)}}" width="40px" height="40px" alt="">
+                        <img src="{{$daftar_seller->photo_ktp}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

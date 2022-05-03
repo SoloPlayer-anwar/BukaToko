@@ -100,7 +100,7 @@ Details Product
                     <td>Image Satu</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$data_product->image_satu)}}" width="50px" height="50px" alt="">
+                        <img src="{{$data_product->image_satu}}" width="50px" height="50px" alt="">
                     </td>
                 </tr>
 
@@ -108,7 +108,7 @@ Details Product
                     <td>Image Dua</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$data_product->image_dua)}}" width="50px" height="50px" alt="">
+                        <img src="{{$data_product->image_dua}}" width="50px" height="50px" alt="">
                     </td>
                 </tr>
 
@@ -117,7 +117,7 @@ Details Product
                     <td>Image Tiga</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$data_product->image_tiga)}}" width="50px" height="50px" alt="">
+                        <img src="{{$data_product->image_tiga}}" width="50px" height="50px" alt="">
                     </td>
                 </tr>
 

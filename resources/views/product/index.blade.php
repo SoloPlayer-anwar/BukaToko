@@ -62,14 +62,14 @@ Data Product
                     <td>{{number_format($item->rate)}}</td>
                     <td>{{number_format($item->price)}}</td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->image_satu)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->image_satu}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->image_dua)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->image_dua}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
 
                     <td>
-                        <img src="{{asset('uploads/'.$item->image_tiga)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->image_tiga}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>
                         <a href="{{route('product.edit', [$item->id])}}" class="btn btn-warning btn-sm">Edit</a>

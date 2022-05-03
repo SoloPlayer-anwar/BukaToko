@@ -94,7 +94,7 @@ Edit Product
                   <div class="form-group">
                     <label for="image_satu">Image Satu</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$data_product->image_satu)}}" width="40px" height="40px" alt="">
+                        <img src="{{$data_product->image_satu}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 
@@ -108,7 +108,7 @@ Edit Product
                   <div class="form-group">
                     <label for="image_dua">Image Dua</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$data_product->image_dua)}}" width="40px" height="40px" alt="">
+                        <img src="{{$data_product->image_dua}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 
@@ -122,7 +122,7 @@ Edit Product
                   <div class="form-group">
                     <label for="image_tiga">Image Tiga</label>
                     <div class="input-group">
-                        <img src="{{asset('uploads/' .$data_product->image_tiga)}}" width="40px" height="40px" alt="">
+                        <img src="{{$data_product->image_tiga}}" width="40px" height="40px" alt="">
                     </div>
                   </div>
 

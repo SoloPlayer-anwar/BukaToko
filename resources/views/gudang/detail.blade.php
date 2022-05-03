@@ -32,7 +32,7 @@ Details Gudang
                     <td>Photo Gudang</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$data_gudang->photo_gudang)}}" width="50px" height="50px" alt="">
+                        <img src="{{$data_gudang->photo_gudang}}" width="50px" height="50px" alt="">
                     </td>
                 </tr>
 

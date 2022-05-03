@@ -57,7 +57,7 @@ Data Upload Status
                     <td>{{$loop->iteration + ($upload_status->perPage() * ($upload_status->currentPage() -1) )}}</td>
                     <td>{{$item->name_user}}</td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->photo_user)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->photo_user}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>{{$item->judul}}</td>
                     <td>

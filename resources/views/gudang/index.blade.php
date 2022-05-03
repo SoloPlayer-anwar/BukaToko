@@ -60,7 +60,7 @@ Data Gudang
                     <td>{{$item->name_gudang}}</td>
                     <td>{{$item->address_gudang}}</td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->photo_gudang)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->photo_gudang}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>{{$item->status}}</td>
                     <td>{{$item->promo}}</td>

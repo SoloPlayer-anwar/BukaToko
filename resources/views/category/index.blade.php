@@ -58,7 +58,7 @@ Data Category
                     <td>{{$loop->iteration + ($category->perPage() * ($category->currentPage() -1) )}}</td>
                     <td>{{$item->name_category}}</td>
                     <td>
-                        <img src="{{asset('uploads/'.$item->photo_category)}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
+                        <img src="{{$item->photo_category}}" alt="" width="40px" height="40px" class="rounded mx-auto d-block">
                     </td>
                     <td>
                         <a href="{{route('category.edit', [$item->id])}}" class="btn btn-warning btn-sm">Edit</a>

@@ -56,7 +56,7 @@ Details User
                     <td>Avatar</td>
                     <td>:</td>
                     <td>
-                        <img src="{{asset('uploads/'.$users->avatar)}}" width="50px" height="50px" alt="">
+                        <img src="{{$users->avatar}}" width="50px" height="50px" alt="">
                     </td>
                 </tr>
 
