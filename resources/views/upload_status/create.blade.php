@@ -24,7 +24,7 @@ Create Upload Status
 
                   <div class="form-group">
                     <label for="desc">Description</label>
-                    <input type="text" class="form-control {{$errors->first('desc') ? 'is-invalid' : ''}}" name="desc" id="desc" placeholder="Enter Description" value="{{ old('desc') }}">
+                    <textarea class="form-control {{$errors->first('desc') ? 'is-invalid' : ''}}" name="desc" id="desc" placeholder="Enter Description Status">{{ old('desc') }}</textarea>
                     <span class="error invalid-feedback">{{$errors->first('desc')}}</span>
                   </div>
 

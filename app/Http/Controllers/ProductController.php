@@ -7,6 +7,7 @@ use App\Models\Gudang;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
@@ -190,6 +191,7 @@ class ProductController extends Controller
         {
             if($request->file('image_satu')->isValid())
             {
+                Storage::disk('upload')->delete($dataProduct->image_satu);
                 $photoProduct = $request->file('image_satu');
                 $extensions = $photoProduct->getClientOriginalExtension();
                 $fileName = "product-photo/" .date('YmdHis'). "." . $extensions;
@@ -203,6 +205,7 @@ class ProductController extends Controller
         {
             if($request->file('image_dua')->isValid())
             {
+                Storage::disk('upload')->delete($dataProduct->image_dua);
                 $photoProduct = $request->file('image_dua');
                 $extensions = $photoProduct->getClientOriginalExtension();
                 $fileName = "product-photo2/" .date('YmdHis'). "." . $extensions;
@@ -217,6 +220,7 @@ class ProductController extends Controller
         {
             if($request->file('image_tiga')->isValid())
             {
+                Storage::disk('upload')->delete($dataProduct->image_tiga);
                 $photoProduct = $request->file('image_tiga');
                 $extensions = $photoProduct->getClientOriginalExtension();
                 $fileName = "product-photo3/" .date('YmdHis'). "." . $extensions;
@@ -241,7 +245,9 @@ class ProductController extends Controller
     {
         $dataProduct = Product::findOrFail($id);
         $dataProduct->delete();
-
+        Storage::disk('upload')->delete($dataProduct->image_satu);
+        Storage::disk('upload')->delete($dataProduct->image_dua);
+        Storage::disk('upload')->delete($dataProduct->image_tiga);
         return redirect()->back()->with('status', 'Data Product Berhasil Dihapus');
     }
 }

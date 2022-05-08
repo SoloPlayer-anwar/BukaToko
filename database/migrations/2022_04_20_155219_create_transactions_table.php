@@ -29,6 +29,7 @@ class CreateTransactionsTable extends Migration
             $table->double('longitude')->nullable();
             $table->string('phone')->nullable();
             $table->string('pengiriman')->nullable();
+            $table->text('image_product')->nullable();
             $table->timestamps();
         });
     }

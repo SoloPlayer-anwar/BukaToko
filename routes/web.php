@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UploadStatusController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\API\MidtransController;
 use Illuminate\Support\Facades\Route;
 
 /*

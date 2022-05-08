@@ -25,6 +25,7 @@ class Transaction extends Model
         'longitude',
         'phone',
         'pengiriman',
+        'image_product',
     ];
 
     public function product()

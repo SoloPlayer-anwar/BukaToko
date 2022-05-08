@@ -173,22 +173,3 @@ Create Product
   </div>
 @endsection
 
-@section('custom_script')
-<link rel="stylesheet" href="{{asset ('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
-<script src="{{asset('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
-<script>
-    $(document).ready(function(){
-        $('#description_product').summernote({
-            toolbar: [
-    // [groupName, [list of button]]
-    ['style', ['bold', 'italic', 'underline', 'clear']],
-    ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['fontsize', ['fontsize']],
-    ['color', ['color']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['height', ['height']]
-  ]
-        });
-    });
-</script>
-@endsection

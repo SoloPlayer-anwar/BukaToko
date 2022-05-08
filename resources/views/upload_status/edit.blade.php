@@ -24,7 +24,7 @@ Edit Data Upload Status
 
                   <div class="form-group">
                     <label for="desc">Description</label>
-                    <input type="text" class="form-control {{$errors->first('desc') ? 'is-invalid' : ''}}" name="desc" id="desc" placeholder="Enter Name User" value="{{ $upload_status->desc }}">
+                    <textarea type="text" class="form-control {{$errors->first('desc') ? 'is-invalid' : ''}}" name="desc" id="desc" placeholder="Enter Name User" value="{{ $upload_status->desc }}"></textarea>
                     <span class="error invalid-feedback">{{$errors->first('desc')}}</span>
                   </div>
 

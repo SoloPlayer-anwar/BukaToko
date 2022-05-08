@@ -75,6 +75,8 @@ class TransactionController extends Controller
             'longitude' => '',
             'phone' => 'required|string|max:255',
             'pengiriman' => 'required|string|max:255',
+            'image_product' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'no_resi' => 'required|string|max:255',
         ]);
 
 
@@ -92,6 +94,8 @@ class TransactionController extends Controller
             'longitude' => $request->longitude,
             'phone' => $request->phone,
             'pengiriman' => $request->pengiriman,
+            'image_product' => $request->image_product,
+            'no_resi' => $request->no_resi,
         ]);
 
         Config::$serverKey = config('services.midtrans.serverKey');
@@ -115,7 +119,7 @@ class TransactionController extends Controller
             'enabled_payments' => [
                 'gopay',
                 'bank_transfer',
-                'shoopeepay',
+                'shopeepay',
                 'indomaret',
                 'alfamart',
             ],

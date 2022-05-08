@@ -82,7 +82,7 @@ Edit Product
 
                   <div class="form-group">
                     <label for="color_tiga">Color Tiga</label>
-                    <input type="text" class="form-control {{$errors->first('color_tiga') ? 'is-invalid' : ''}}" name="size_tiga"  id="color_tiga" placeholder="Enter Color Tiga" value="{{ $data_product->color_tiga }}">
+                    <input type="text" class="form-control {{$errors->first('color_tiga') ? 'is-invalid' : ''}}" name="color_tiga"  id="color_tiga" placeholder="Enter Color Tiga" value="{{ $data_product->color_tiga }}">
                   </div>
 
                   <div class="form-group">
