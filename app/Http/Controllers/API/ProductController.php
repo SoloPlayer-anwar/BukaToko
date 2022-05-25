@@ -47,37 +47,37 @@ class ProductController extends Controller
 
         if($name_product)
         {
-            $product = $product->where('name_product', 'like', '%' . $name_product . '%');
+            $product->where('name_product', 'like', '%' . $name_product . '%');
         }
 
         if($tags)
         {
-            $product = $product->where('tags', 'like', '%' . $tags . '%');
+            $product->where('tags', 'like', '%' . $tags . '%');
         }
 
         if($price_from)
         {
-            $product = $product->where('price', '>=', $price_from);
+            $product->where('price', '>=', $price_from);
         }
 
         if($price_to)
         {
-            $product = $product->where('price', '<=', $price_to);
+            $product->where('price', '<=', $price_to);
         }
 
         if($category_id)
         {
-            $product = $product->where('category_id', $category_id);
+            $product->where('category_id', $category_id);
         }
 
         if($gudang_id)
         {
-            $product = $product->where('gudang_id', $gudang_id);
+            $product->where('gudang_id', $gudang_id);
         }
 
         if($user_id)
         {
-            $product = $product->where('user_id', $user_id);
+            $product->where('user_id', $user_id);
         }
 
         return ResponseFormmater::success(
