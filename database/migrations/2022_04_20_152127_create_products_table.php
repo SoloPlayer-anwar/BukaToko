@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             $table->text('image_dua')->nullable();
             $table->text('image_tiga')->nullable();
             $table->string('tags')->nullable();
+            $table->string('diskon')->nullable();
 
             $table->bigInteger('category_id')->nullable();
             $table->bigInteger('gudang_id')->nullable();

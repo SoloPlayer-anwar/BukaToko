@@ -28,6 +28,7 @@ class Product extends Model
         'image_dua',
         'image_tiga',
         'tags',
+        'diskon',
         'category_id',
         'gudang_id',
         'user_id',

@@ -8,6 +8,7 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Midtrans\Config;
+use Midtrans\Notification;
 use Midtrans\Snap;
 
 class TransactionController extends Controller
@@ -114,6 +115,7 @@ class TransactionController extends Controller
             'customer_details' => [
                 'first_name' => $transaction->user->name,
                 'email' => $transaction->user->email,
+                'address' => $transaction->address,
             ],
 
             'enabled_payments' => [

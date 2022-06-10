@@ -4,7 +4,9 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\GudangController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\DaftarSellerController;
+use App\Http\Controllers\API\KeranjangController;
 use App\Http\Controllers\API\KomentarController;
+use App\Http\Controllers\API\MidtransController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\RajaOngkirController;
 use App\Http\Controllers\API\TransactionController;
@@ -29,6 +31,10 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('user/avatar', [UserController::class, 'upload']);
     Route::get('transaction', [TransactionController::class, 'transaction']);
     Route::post('checkout', [TransactionController::class, 'checkout']);
+    Route::get('cart', [KeranjangController::class, 'getCart']);
+    Route::post('cart', [KeranjangController::class, 'addCart']);
+    Route::post('cartUpdate/{id}', [KeranjangController::class, 'updateCart']);
+    Route::post('cartDelete/{id}', [KeranjangController::class, 'deleteCart']);
 }) ;
 
 Route::post('login',[UserController::class, 'login']);
@@ -43,6 +49,8 @@ Route::post('daftar-seller', [DaftarSellerController::class, 'daftarSeller']);
 Route::get('product', [ProductController::class, 'product']);
 Route::get('ongkir', [RajaOngkirController::class, 'ongkir']);
 Route::get('upload-status', [UploadStatusController::class, 'uploadStatus']);
+
+Route::post('midtrans/callback', [MidtransController::class, 'callback']);
 
 
 

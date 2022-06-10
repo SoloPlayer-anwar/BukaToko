@@ -71,6 +71,7 @@ class ProductController extends Controller
             'image_dua' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_tiga' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tags' => 'sometimes|string|max:255',
+            'diskon' => 'sometimes|string|max:255',
             'category_id' => 'sometimes|exists:categories,id',
             'gudang_id' => 'sometimes|exists:gudangs,id',
             'user_id' => 'sometimes|exists:users,id',

@@ -129,6 +129,12 @@ Details Product
                 </tr>
 
                 <tr>
+                    <td>Diskon</td>
+                    <td>:</td>
+                    <td>{{$data_product->diskon}}</td>
+                </tr>
+
+                <tr>
                     <td>Category</td>
                     <td>:</td>
                     @foreach ($category as $categories)

@@ -135,6 +135,13 @@ Create Product
                   </div>
 
                   <div class="form-group">
+                    <label for="diskon">Diskon</label>
+                    <input type="numeric" class="form-control {{$errors->first('diskon') ? 'is-invalid' : ''}}" placeholder="Enter Diskon"
+                    name="diskon" id="diskon">
+                    <span class="error invalid-feedback">{{$errors->first('diskon')}}</span>
+                  </div>
+
+                  <div class="form-group">
                     <label for="category_id">Category</label>
                     <select name="category_id" id="category_id" class="form-control">
                         @foreach ($category as $categories )

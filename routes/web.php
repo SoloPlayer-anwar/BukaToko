@@ -10,6 +10,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UploadStatusController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\API\MidtransController;
+use App\Http\Controllers\KeranjangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,7 @@ Route::resource('gudang', GudangController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('transaction', TransactionController::class);
 Route::get('transaction/{id}/status/{status}', [TransactionController::class, 'changeStatus'])->name('transaction.changeStatus');
+Route::resource('keranjang', KeranjangController::class);
 });
 
 Route::get('midtrans/success', [MidtransController::class, 'success']);
