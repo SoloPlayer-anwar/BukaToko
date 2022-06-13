@@ -21,8 +21,10 @@ class CreateKeranjangsTable extends Migration
             $table->integer('quantity')->nullable();
             $table->integer('price')->nullable();
             $table->text('image')->nullable();
+            $table->integer('total')->nullable();
 
             $table->bigInteger('user_id')->nullable();
+            $table->string('role')->nullable();
 
             $table->timestamps();
         });

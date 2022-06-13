@@ -16,7 +16,9 @@ class Keranjang extends Model
         'quantity',
         'price',
         'image',
+        'total',
         'user_id',
+        'role'
     ];
 
 
