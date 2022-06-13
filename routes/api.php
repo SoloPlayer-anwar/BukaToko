@@ -32,7 +32,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('transaction', [TransactionController::class, 'transaction']);
     Route::post('checkout', [TransactionController::class, 'checkout']);
 
-    Route::get('cart', [KeranjangController::class, 'getCart']);
+    Route::get('getCart', [KeranjangController::class, 'getCart']);
     Route::post('cart', [KeranjangController::class, 'addCart']);
     Route::post('cartUpdate/{id}', [KeranjangController::class, 'updateCart']);
     Route::post('cartDelete/{id}', [KeranjangController::class, 'deleteCart']);
