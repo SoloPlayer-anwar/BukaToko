@@ -47,15 +47,9 @@ Details Transaction
                 </tr>
 
                 <tr>
-                    <td>Color</td>
+                    <td>variant Product</td>
                     <td>:</td>
-                    <td>{{$transaction->color}}</td>
-                </tr>
-
-                <tr>
-                    <td>Size</td>
-                    <td>:</td>
-                    <td>{{$transaction->size}}</td>
+                    <td>{{$transaction->varian_product}}</td>
                 </tr>
 
                 <tr>

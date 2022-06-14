@@ -22,8 +22,7 @@ class CreateTransactionsTable extends Migration
             $table->string('status')->nullable();
             $table->text('payment_url')->nullable();
             $table->text('no_resi')->nullable();
-            $table->string('color')->nullable();
-            $table->string('size')->nullable();
+            $table->string('varian_product')->nullable();
             $table->text('address')->nullable();
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
