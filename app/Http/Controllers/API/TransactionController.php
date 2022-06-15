@@ -75,7 +75,7 @@ class TransactionController extends Controller
             'longitude' => '',
             'phone' => 'required|string|max:255',
             'pengiriman' => 'required|string|max:255',
-            'image_product' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_product' => '',
             'no_resi' => 'required|string|max:255',
         ]);
 
