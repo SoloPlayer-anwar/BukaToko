@@ -36,13 +36,12 @@ class DaftarSellerController extends Controller
 
         if($request->file('photo_ktp')->isValid())
         {
-
-                $photoKtp = $request->file('photo_ktp');
-                $extensions = $photoKtp->getClientOriginalExtension();
-                $photoSeller = "seller-photo_ktp/".date('YmdHis').".".$extensions;
-                $uploadPath = env('UPLOAD_PATH')."/seller-photo_ktp";
-                $request->file('photo_ktp')->move($uploadPath, $photoSeller);
-                $daftarSeller['photo_ktp'] = $photoSeller;
+            $photoKtp = $request->file('photo_ktp');
+            $extensions = $photoKtp->getClientOriginalExtension();
+            $photoSeller = "seller-photo_ktp/".date('YmdHis').".".$extensions;
+            $uploadPath = env('UPLOAD_PATH')."/seller-photo_ktp";
+            $request->file('photo_ktp')->move($uploadPath, $photoSeller);
+            $daftarSeller['photo_ktp'] = $photoSeller;
         }
 
         try {

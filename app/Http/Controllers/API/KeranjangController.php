@@ -18,7 +18,7 @@ class KeranjangController extends Controller
 
         if($id)
         {
-            $cart = Keranjang::with(['user'])->find($id);
+            $cart = Keranjang::with(['user', 'product'])->find($id);
 
             if($cart)
             {
@@ -38,7 +38,7 @@ class KeranjangController extends Controller
 
         }
 
-        $cart = Keranjang::with(['user'])->where('user_id', Auth::user()->id, Auth::user()->role == 'admin');
+        $cart = Keranjang::with(['user', 'product'])->where('user_id', Auth::user()->id, Auth::user()->role == 'admin');
 
 
         if($user_id)
@@ -67,6 +67,7 @@ class KeranjangController extends Controller
             'image' => 'sometimes|string',
             'total' => 'sometimes|integer',
             'user_id' => 'required|exists:users,id',
+            'product_id' => 'required|exists:products,id',
             'role' => 'required|string|max:255',
         ]);
 
@@ -79,6 +80,7 @@ class KeranjangController extends Controller
             'image' => $request->image,
             'total' => $request->total,
             'user_id' => $request->user_id,
+            'product_id' => $request->product_id,
             'role' => $request->role,
         ]);
 

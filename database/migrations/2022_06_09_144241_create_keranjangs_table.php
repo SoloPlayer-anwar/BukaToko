@@ -24,6 +24,7 @@ class CreateKeranjangsTable extends Migration
             $table->integer('total')->nullable();
 
             $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('product_id')->nullable();
             $table->string('role')->nullable();
 
             $table->timestamps();

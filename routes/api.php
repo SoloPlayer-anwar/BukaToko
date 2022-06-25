@@ -46,7 +46,6 @@ Route::get('gudang', [GudangController::class,'all']);
 Route::get('role', [UserController::class, 'alluser']);
 Route::get('komentar', [KomentarController::class, 'all']);
 Route::post('post-komentar', [KomentarController::class, 'postKomentar']);
-Route::post('photo-comment', [KomentarController::class, 'uploadKomentar']);
 Route::post('daftar-seller', [DaftarSellerController::class, 'daftarSeller']);
 Route::get('product', [ProductController::class, 'product']);
 Route::get('ongkir', [RajaOngkirController::class, 'ongkir']);
