@@ -17,14 +17,14 @@ class ProductController extends Controller
         $tags = $request->input('tags');
         $category_id = $request->input('category_id');
         $gudang_id = $request->input('gudang_id');
-        $user_id = $request->input('user_id');
+        $role = $request->input('role');
         $price_from = $request->input('price_from');
         $price_to = $request->input('price_to');
 
 
         if($id)
         {
-            $product = Product::with(['category', 'gudang', 'user'])->find($id);
+            $product = Product::with(['category', 'gudang'])->find($id);
 
             if($product)
             {
@@ -43,7 +43,7 @@ class ProductController extends Controller
             }
         }
 
-        $product = Product::with(['category', 'gudang', 'user']);
+        $product = Product::with(['category', 'gudang']);
 
         if($name_product)
         {
@@ -75,9 +75,9 @@ class ProductController extends Controller
             $product->where('gudang_id', $gudang_id);
         }
 
-        if($user_id)
+        if($role)
         {
-            $product->where('user_id', $user_id);
+            $product->where('role', 'like', '%' . $role . '%');
         }
 
         return ResponseFormmater::success(

@@ -158,16 +158,9 @@ Edit Product
                   </div>
 
                   <div class="form-group">
-                    <label for="user_id">User</label>
-                    <select name="user_id" id="user_id" class="form-control">
-                        @foreach ($user as $users )
-                        <option value="{{$users->id}}" @if ($data_product->user_id == $users->id) selected
-                        @endif>{{$users->role}}</option>
-                        @endforeach
-                    </select>
-                    <span class="error invalid-feedback">{{$errors->first('user_id')}}</span>
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control {{$errors->first('role') ? 'is-invalid' : ''}}" name="role"  id="role" placeholder="Enter Role" value="{{ $data_product->role }}">
                   </div>
-
 
 
                 </div>

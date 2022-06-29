@@ -36,7 +36,7 @@ class CreateProductsTable extends Migration
 
             $table->bigInteger('category_id')->nullable();
             $table->bigInteger('gudang_id')->nullable();
-            $table->bigInteger('user_id')->nullable();
+            $table->string('role')->nullable();
 
 
             $table->timestamps();

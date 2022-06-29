@@ -31,7 +31,7 @@ class Product extends Model
         'diskon',
         'category_id',
         'gudang_id',
-        'user_id',
+        'role',
 
     ];
 
@@ -49,12 +49,6 @@ class Product extends Model
     {
         return $this->belongsTo(Gudang::class , 'gudang_id', 'id');
     }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class , 'user_id', 'id');
-    }
-
 
     public function getCreatedAtAttribute($value)
     {

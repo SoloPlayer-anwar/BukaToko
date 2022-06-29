@@ -20,11 +20,11 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $filterKeyword = $request->get('keyword');
-        $dataProduct['data_product'] = Product::with('category', 'gudang', 'user')->paginate(10);
+        $dataProduct['data_product'] = Product::with('category', 'gudang')->paginate(10);
 
         if($filterKeyword)
         {
-            $dataProduct['data_product'] = Product::with('category', 'gudang', 'user')
+            $dataProduct['data_product'] = Product::with('category', 'gudang')
             ->where("name_product", "LIKE", "%$filterKeyword%")
             ->paginate(10);
         }
@@ -42,7 +42,7 @@ class ProductController extends Controller
         $category = Category::all();
         $gudang = Gudang::all();
         $user = User::all();
-        return view('product.create', compact('category', 'gudang', 'user'));
+        return view('product.create', compact('category', 'gudang'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ProductController extends Controller
             'diskon' => 'sometimes|string|max:255',
             'category_id' => 'sometimes|exists:categories,id',
             'gudang_id' => 'sometimes|exists:gudangs,id',
-            'user_id' => 'sometimes|exists:users,id',
+            'role' => 'required|string|max:255',
         ]);
 
         if($validate->failed())
@@ -128,7 +128,6 @@ class ProductController extends Controller
         $dataProduct['data_product'] = Product::findOrFail($id);
         $dataProduct['category'] = Category::all();
         $dataProduct['gudang'] = Gudang::all();
-        $dataProduct['user'] = User::all();
 
         return view('product.detail', $dataProduct);
     }
@@ -145,7 +144,6 @@ class ProductController extends Controller
         $dataProduct['data_product'] = Product::findOrFail($id);
         $dataProduct['category'] = Category::all();
         $dataProduct['gudang'] = Gudang::all();
-        $dataProduct['user'] = User::all();
         return view('product.edit', $dataProduct);
     }
 
@@ -158,7 +156,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dataProduct = Product::with(['category', 'gudang', 'user'])->findOrFail($id);
+        $dataProduct = Product::with(['category', 'gudang'])->findOrFail($id);
         $validate = Validator::make($request->all(), [
             'name_product' => 'required|string|max:255',
             'description_product' => 'required',
@@ -179,7 +177,7 @@ class ProductController extends Controller
             'tags' => 'sometimes|string|max:255',
             'category_id' => 'sometimes|exists:categories,id',
             'gudang_id' => 'sometimes|exists:gudangs,id',
-            'user_id' => 'sometimes|exists:users,id',
+            'role' => 'required|string|max:255',
         ]);
 
         if($validate->fails())

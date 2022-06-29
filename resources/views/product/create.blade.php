@@ -160,13 +160,10 @@ Create Product
                   </div>
 
                   <div class="form-group">
-                    <label for="user_id">User</label>
-                    <select name="user_id" id="user_id" class="form-control">
-                        @foreach ($user as $users )
-                        <option value="{{$users->id}}">{{$users->role}}</option>
-                        @endforeach
-                    </select>
-
+                    <label for="role">Role</label>
+                    <input type="numeric" class="form-control {{$errors->first('role') ? 'is-invalid' : ''}}" placeholder="Enter Role"
+                    name="role" id="role">
+                    <span class="error invalid-feedback">{{$errors->first('role')}}</span>
                   </div>
 
                 </div>

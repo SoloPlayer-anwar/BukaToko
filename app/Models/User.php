@@ -52,11 +52,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function product()
-    {
-        return $this->hasMany(Product::class, 'user_id', 'id');
-    }
-
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->timestamp;

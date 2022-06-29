@@ -157,14 +157,9 @@ Details Product
                 </tr>
 
                 <tr>
-                    <td>User</td>
+                    <td>Role</td>
                     <td>:</td>
-                    @foreach ($user as $users)
-                        @if ($users->id == $data_product->user_id)
-                            <td>{{$users->role}}</td>
-                        @endif
-
-                    @endforeach
+                    <td>{{$data_product->role}}</td>
                 </tr>
 
 
